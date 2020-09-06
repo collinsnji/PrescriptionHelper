@@ -1,8 +1,10 @@
 let express = require("express");
 let bodyParser = require("body-parser");
 let path = require("path");
+let cors = require('cors');
+
 let app = express();
-let PORT = 5000;
+let PORT = 8080;
 let _drugs = require("./src/app");
 
 const Drugs = new _drugs();
@@ -10,6 +12,7 @@ const DrugNames = require("./src/drug_names")
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
+app.options('*', cors())
 app.use('/drug', express.static(path.join(__dirname, 'public')))
 app.set('views', './public')
 app.set('view engine', 'pug');
@@ -23,7 +26,9 @@ app.all("/elements", (req, res) => {
 app.get("/drug/:id", async (req, res) => {
     let drugId = req.params.id;
     let drugInfo = await Drugs.getDrug(drugId);
-    res.render('generic', { title: drugId, drug_name: drugId, drug_info: drugInfo.data() });
+    let rtf_time = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
+    let time = rtf_time.format(3, 'hour')
+    res.render('generic', { title: drugId, drug_name: drugId, drug_info: drugInfo.data(), time: time });
 });
 
 app.get("/drugs/new", (req, res) => {

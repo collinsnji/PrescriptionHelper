@@ -1,15 +1,4 @@
 async function getAllDrugs() {
-    let htmlElements = `<article class="style1">
-        <span class="image">
-        <img src="images/pic01.jpg" alt="" />
-        </span>
-        <a href="generic.html">
-        <h2>Magna</h2>
-        <div class="content">
-            <p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-        </div>
-        </a>
-    </article>`;
     const allDrugs = await fetch('https://medherence.uk.r.appspot.com/drugs/all');
     console.log(allDrugs.json().then(data => {
         PopulateDrugs(data)

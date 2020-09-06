@@ -48,14 +48,18 @@ head
         article.style3
           span.image
             img(src="images/pic01.jpg" alt="")
-          a(href="/drug/#{drug_name}")
+          a(href="#")
             h2= drug_name
             div.content
-                p(style="margin: 0 0 0.5em 0;") #{drug_name}
+                p(style="margin: 0 0 0.5em 0;") #{drug_info.genericName}
                 p 
                   | Number of Pills: #{drug_info.numberOfPills} <br/>
-                  | Interactions: #{drug_name}
-
+                  | Interactions: #{drug_info.interactions}
+        div
+          p Don't forget to take this medication #{time} from now
+          h3 Did you take this drug today 
+          a.button.primary(href='#') Yes
+          a.button.primary(href='#') No
 // Scripts
 script(src='assets/lib/jquery.min.js')
 script(src='assets/lib/browser.min.js')
