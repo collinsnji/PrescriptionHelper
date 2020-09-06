@@ -1,7 +1,7 @@
 
 async function updateDrugInfo(drug_id, pills) {
     try {
-        const response = await fetch(`https://medherence.uk.r.appspot.com/drugs/update/`, {
+        await fetch(`https://medherence.uk.r.appspot.com/drugs/update/`, {
             method: 'POST',
             mode: 'cors',
             cache: 'no-cache',

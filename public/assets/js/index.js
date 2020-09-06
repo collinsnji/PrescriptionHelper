@@ -1,5 +1,5 @@
 async function getAllDrugs() {
-    const allDrugs = await fetch('http://medherence.uk.r.appspot.com/drugs/all');
+    const allDrugs = await fetch('https://medherence.uk.r.appspot.com/drugs/all');
     allDrugs.json().then(data => {
         PopulateDrugs(data)
     });
