@@ -6,10 +6,26 @@
 
 /* Main */
 
-	#main {
-		@include padding(5em, 0, (-5em, 0, 3em, 0));
+#main {
+	@include padding(5em, 0, (-5em, 0, 3em, 0));
 
-		@include breakpoint('<=small') {
-			@include padding(3em, 0, (-3em, 0, 3em, 0));
-		}
+	@include breakpoint("<=small") {
+		@include padding(3em, 0, (-3em, 0, 3em, 0));
 	}
+}
+.medication_count {
+	display: flex;
+	position: absolute;
+	top: 2%;
+	right: 2%;
+	color: #000;
+	width: 15%;
+	height: 15%;
+	border-radius: 50%;
+	background-color: #fff;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	text-align: center;
+}

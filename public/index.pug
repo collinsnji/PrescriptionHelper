@@ -1,0 +1,63 @@
+doctype html
+//
+  Phantom by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+head
+  title= title
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1, user-scalable=no')
+  link(rel='stylesheet' href='assets/css/main.css')
+  noscript
+    link(rel='stylesheet' href='assets/css/noscript.css')
+// Wrapper
+#wrapper
+  // Header
+  header#header
+    .inner
+      // Logo
+      a.logo(href='index.html')
+        span.symbol
+          img(src='images/logo.svg' alt='')
+        span.title Medherence
+      // Nav
+      nav
+        ul
+          li
+            a(href='#menu') Menu
+  // Menu
+  nav#menu
+    h2 Menu
+    ul
+      li
+        a(href='index.html') Home
+      li
+        a(href='/profile') My Profile
+      li
+        a(href='/locator') Add New Drug
+      li
+        a(href='#') Care Locator
+      li
+        a(href='elements.html') Contact PCP
+  // Main
+  #main
+    .inner
+      header
+        h1= greetings
+        h4.center Your current medications
+      section#drug_list.tiles
+  // Footer
+  footer#footer
+    .inner
+      ul.copyright
+        li &copy; Null Cats. All rights reserved
+        li
+          | Design: 
+          a(href='http://html5up.net') HTML5 UP
+// Scripts
+script(src='assets/lib/jquery.min.js')
+script(src='assets/lib/browser.min.js')
+script(src='assets/lib/breakpoints.min.js')
+script(src='assets/lib/util.js')
+script(src='assets/lib/main.js')
+script(src='assets/js/index.js')

@@ -8,18 +8,19 @@ admin.initializeApp({
 
 const firestore = admin.firestore();
 class Drugs {
-    drugInfo = {
-        commonName: '',
-        scientificName: '',
-        prescription: 0,
-        interactions: []
-    }
-    async addNewDrug(drugId, drugInfo = drugInfo = { commonName: '', scientificName: '', prescription: 0, interactions: [] }) {
+    async addNewDrug(drugId, drugInfo = {
+        genericName: '',
+        brandName: '',
+        drugClass: '',
+        numberOfPills: 0,
+        interactions: ''
+    }) {
         const document = firestore.doc(`drugs/${drugId}`);
         await document.set({
-            commonName: drugInfo.commonName,
-            scientificName: drugInfo.scientificName,
-            prescription: drugInfo.prescription,
+            genericName: drugInfo.genericName,
+            brandName: drugInfo.brandName,
+            drugClass: drugInfo.drugClass,
+            numberOfPills: drugInfo.numberOfPills,
             interactions: drugInfo.interactions
         });
         console.log("Entered new drug successfully");

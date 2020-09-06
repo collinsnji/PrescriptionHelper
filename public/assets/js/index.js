@@ -19,14 +19,17 @@ async function getAllDrugs() {
 function PopulateDrugs(data) {
     let drugListContainer = document.getElementById("drug_list");
     data.forEach(drug => {
-        drugListContainer.innerHTML += `<article class="style1">
+        let styleId = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+        drugListContainer.innerHTML += `<article class="style${styleId}">
         <span class="image">
         <img src="images/pic01.jpg" alt="" />
         </span>
-        <a href="generic.html">
-        <h2>${drug.commonName}</h2>
+        <a href="/drug/${drug.brandName}">
+        <h2>${drug.genericName}</h2>
         <div class="content">
-            <p>Prescription: ${drug.prescription}, Interactions: ${drug.interactions}</p>
+            <div class="medication_count">${drug.numberOfPills}</div>
+            <p style="margin: 0 0 0.5em 0;">Commonly called ${drug.brandName}</p>
+            <p>This drug interacts with ${drug.interactions}</p>
         </div>
         </a>
     </article>`
