@@ -56,13 +56,14 @@ head
                   | Number of Pills: #{drug_info.numberOfPills} <br/>
                   | Interactions: #{drug_info.interactions}
         div
-          p Don't forget to take this medication #{time} from now
+          p Don't forget to take this medication #{time}
           h3 Did you take this drug today 
-          a.button.primary(href='#') Yes
-          a.button.primary(href='#') No
+          a#yes-btn.button.primary(data-pills= drug_info.numberOfPills, data-name= drug_info.brandName) Yes
+          a#no-btn.button.primary(href='#') No
 // Scripts
 script(src='assets/lib/jquery.min.js')
 script(src='assets/lib/browser.min.js')
 script(src='assets/lib/breakpoints.min.js')
 script(src='assets/lib/util.js')
 script(src='assets/lib/main.js')
+script(src='assets/js/index.js')

@@ -31,6 +31,13 @@ app.get("/drug/:id", async (req, res) => {
     res.render('generic', { title: drugId, drug_name: drugId, drug_info: drugInfo.data(), time: time });
 });
 
+app.post("/drugs/update/", async (req, res) => {
+    let drugId = req.body.id;
+    let newVal = req.body.newVal;
+    await Drugs.updatePrescription(drugId, newVal).then(() => {
+        res.redirect(req.get('referer'));
+    });
+});
 app.get("/drugs/new", (req, res) => {
     DrugNames.forEach(d => {
         Drugs.addNewDrug(d.brandName, {

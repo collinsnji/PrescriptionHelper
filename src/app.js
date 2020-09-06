@@ -46,11 +46,11 @@ class Drugs {
             return false;
         }
     }
-    async updatePrescription(drugId, prescription) {
+    async updatePrescription(drugId, numberOfPills) {
         const document = firestore.doc(`drugs/${drugId}`);
         try {
             await document.update({
-                prescription: prescription
+                numberOfPills: numberOfPills
             });
             return true;
         } catch (error) {
