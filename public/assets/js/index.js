@@ -10,7 +10,7 @@ async function getAllDrugs() {
         </div>
         </a>
     </article>`;
-    const allDrugs = await fetch('http://localhost:5000/drugs/all');
+    const allDrugs = await fetch('https://medherence.uk.r.appspot.com/drugs/all');
     console.log(allDrugs.json().then(data => {
         PopulateDrugs(data)
     }))
