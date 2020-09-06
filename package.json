@@ -6,7 +6,8 @@
   "author": "collinsnji <collins.geek@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon server.js",
+    "start-dev": "nodemon server.js",
+    "start": "node server.js",
     "compile-css": "compass watch --output-style compressed"
   },
   "nodemonConfig": {
